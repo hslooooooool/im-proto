@@ -1,0 +1,14 @@
+syntax = "proto3";
+package vip.qsos.im.lib.model.proto;
+/*输出的JAVA实体对象名称*/
+option java_outer_classname = "SendBodyProto";
+/*客户端发送实体*/
+message Model {
+    /**发送key*/
+    string key = 1;
+    /**发送时间*/
+    int64 timestamp = 2;
+    /**发送数据集合*/
+    map<string, string> data = 3;
+}
+	 

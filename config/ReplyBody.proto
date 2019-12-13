@@ -1,0 +1,18 @@
+syntax = "proto3";
+package vip.qsos.im.lib.model.proto;
+/*输出的JAVA实体对象名称*/
+option java_outer_classname = "ReplyBodyProto";
+/*服务端回执实体*/
+message Model {
+    /**回执key*/
+    string key = 1;
+    /**返回码*/
+    string code = 2;
+    /**返回说明*/
+    string message = 3;
+    /**返回时间*/
+    int64 timestamp = 4;
+    /**返回数据集合*/
+    map<string, string> data = 5;
+}
+	 
