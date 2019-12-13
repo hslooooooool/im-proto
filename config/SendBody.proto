@@ -1,5 +1,6 @@
 syntax = "proto3";
 package vip.qsos.im.lib.model.proto;
+option optimize_for = LITE_RUNTIME;
 /*输出的JAVA实体对象名称*/
 option java_outer_classname = "SendBodyProto";
 /*客户端发送实体*/

@@ -28,7 +28,7 @@ namespace Vip.Qsos.Im.Lib.Model.Proto {
             "IpABCgVNb2RlbBILCgNrZXkYASABKAkSEQoJdGltZXN0YW1wGAIgASgDEjoK",
             "BGRhdGEYAyADKAsyLC52aXAucXNvcy5pbS5saWIubW9kZWwucHJvdG8uTW9k",
             "ZWwuRGF0YUVudHJ5GisKCURhdGFFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
-            "dWUYAiABKAk6AjgBQg9CDVNlbmRCb2R5UHJvdG9iBnByb3RvMw=="));
+            "dWUYAiABKAk6AjgBQhFCDVNlbmRCb2R5UHJvdG9IA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

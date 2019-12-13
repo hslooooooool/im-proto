@@ -1,6 +1,7 @@
 syntax = "proto3";
 package vip.qsos.im.lib.model.proto;
-/*输出的JAVA实体对象名称*/
+option optimize_for = LITE_RUNTIME;
+/**输出的JAVA实体对象名称*/
 option java_outer_classname = "MessageProto";
 /*自定义消息实体*/
 message Model {

@@ -8,15 +8,9 @@ public final class SendBodyProto {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   public interface ModelOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vip.qsos.im.lib.model.proto.Model)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <pre>
@@ -110,119 +104,15 @@ public final class SendBodyProto {
    * Protobuf type {@code vip.qsos.im.lib.model.proto.Model}
    */
   public  static final class Model extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          Model, Model.Builder> implements
       // @@protoc_insertion_point(message_implements:vip.qsos.im.lib.model.proto.Model)
       ModelOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Model.newBuilder() to construct.
-    private Model(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private Model() {
       key_ = "";
     }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Model();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Model(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              key_ = s;
-              break;
-            }
-            case 16: {
-
-              timestamp_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                data_ = com.google.protobuf.MapField.newMapField(
-                    DataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              data__ = input.readMessage(
-                  DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              data_.getMutableMap().put(
-                  data__.getKey(), data__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return vip.qsos.im.lib.model.proto.SendBodyProto.internal_static_vip_qsos_im_lib_model_proto_Model_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 3:
-          return internalGetData();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return vip.qsos.im.lib.model.proto.SendBodyProto.internal_static_vip_qsos_im_lib_model_proto_Model_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              vip.qsos.im.lib.model.proto.SendBodyProto.Model.class, vip.qsos.im.lib.model.proto.SendBodyProto.Model.Builder.class);
-    }
-
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
+    private java.lang.String key_;
     /**
      * <pre>
      **发送key
@@ -231,17 +121,9 @@ public final class SendBodyProto {
      * <code>string key = 1;</code>
      * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        key_ = s;
-        return s;
-      }
+      return key_;
     }
     /**
      * <pre>
@@ -251,18 +133,49 @@ public final class SendBodyProto {
      * <code>string key = 1;</code>
      * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        key_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(key_);
+    }
+    /**
+     * <pre>
+     **发送key
+     * </pre>
+     *
+     * <code>string key = 1;</code>
+     * @param value The key to set.
+     */
+    private void setKey(
+        java.lang.String value) {
+      value.getClass();
+  
+      key_ = value;
+    }
+    /**
+     * <pre>
+     **发送key
+     * </pre>
+     *
+     * <code>string key = 1;</code>
+     */
+    private void clearKey() {
+      
+      key_ = getDefaultInstance().getKey();
+    }
+    /**
+     * <pre>
+     **发送key
+     * </pre>
+     *
+     * <code>string key = 1;</code>
+     * @param value The bytes for key to set.
+     */
+    private void setKeyBytes(
+        com.google.protobuf.ByteString value) {
+      checkByteStringIsUtf8(value);
+      key_ = value.toStringUtf8();
+      
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 2;
@@ -275,35 +188,63 @@ public final class SendBodyProto {
      * <code>int64 timestamp = 2;</code>
      * @return The timestamp.
      */
+    @java.lang.Override
     public long getTimestamp() {
       return timestamp_;
+    }
+    /**
+     * <pre>
+     **发送时间
+     * </pre>
+     *
+     * <code>int64 timestamp = 2;</code>
+     * @param value The timestamp to set.
+     */
+    private void setTimestamp(long value) {
+      
+      timestamp_ = value;
+    }
+    /**
+     * <pre>
+     **发送时间
+     * </pre>
+     *
+     * <code>int64 timestamp = 2;</code>
+     */
+    private void clearTimestamp() {
+      
+      timestamp_ = 0L;
     }
 
     public static final int DATA_FIELD_NUMBER = 3;
     private static final class DataDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
+      static final com.google.protobuf.MapEntryLite<
           java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
+              com.google.protobuf.MapEntryLite
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  vip.qsos.im.lib.model.proto.SendBodyProto.internal_static_vip_qsos_im_lib_model_proto_Model_DataEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "");
     }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> data_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    private com.google.protobuf.MapFieldLite<
+        java.lang.String, java.lang.String> data_ =
+            com.google.protobuf.MapFieldLite.emptyMapField();
+    private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.String>
     internalGetData() {
-      if (data_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            DataDefaultEntryHolder.defaultEntry);
+      return data_;
+    }
+    private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.String>
+    internalGetMutableData() {
+      if (!data_.isMutable()) {
+        data_ = data_.mutableCopy();
       }
       return data_;
     }
+    @java.lang.Override
 
     public int getDataCount() {
-      return internalGetData().getMap().size();
+      return internalGetData().size();
     }
     /**
      * <pre>
@@ -312,15 +253,17 @@ public final class SendBodyProto {
      *
      * <code>map&lt;string, string&gt; data = 3;</code>
      */
+    @java.lang.Override
 
     public boolean containsData(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetData().getMap().containsKey(key);
+      key.getClass();
+      return internalGetData().containsKey(key);
     }
     /**
      * Use {@link #getDataMap()} instead.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getData() {
       return getDataMap();
@@ -332,9 +275,11 @@ public final class SendBodyProto {
      *
      * <code>map&lt;string, string&gt; data = 3;</code>
      */
+    @java.lang.Override
 
     public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-      return internalGetData().getMap();
+      return java.util.Collections.unmodifiableMap(
+          internalGetData());
     }
     /**
      * <pre>
@@ -343,13 +288,14 @@ public final class SendBodyProto {
      *
      * <code>map&lt;string, string&gt; data = 3;</code>
      */
+    @java.lang.Override
 
     public java.lang.String getDataOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      key.getClass();
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
+          internalGetData();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
@@ -359,206 +305,111 @@ public final class SendBodyProto {
      *
      * <code>map&lt;string, string&gt; data = 3;</code>
      */
+    @java.lang.Override
 
     public java.lang.String getDataOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      key.getClass();
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
+          internalGetData();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getKeyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
-      }
-      if (timestamp_ != 0L) {
-        output.writeInt64(2, timestamp_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetData(),
-          DataDefaultEntryHolder.defaultEntry,
-          3);
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
-      }
-      if (timestamp_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, timestamp_);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetData().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, data__);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof vip.qsos.im.lib.model.proto.SendBodyProto.Model)) {
-        return super.equals(obj);
-      }
-      vip.qsos.im.lib.model.proto.SendBodyProto.Model other = (vip.qsos.im.lib.model.proto.SendBodyProto.Model) obj;
-
-      if (!getKey()
-          .equals(other.getKey())) return false;
-      if (getTimestamp()
-          != other.getTimestamp()) return false;
-      if (!internalGetData().equals(
-          other.internalGetData())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTimestamp());
-      if (!internalGetData().getMap().isEmpty()) {
-        hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetData().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
+    /**
+     * <pre>
+     **发送数据集合
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; data = 3;</code>
+     */
+    private java.util.Map<java.lang.String, java.lang.String>
+    getMutableDataMap() {
+      return internalGetMutableData();
     }
 
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+      return (Builder) DEFAULT_INSTANCE.createBuilder();
     }
     public static Builder newBuilder(vip.qsos.im.lib.model.proto.SendBodyProto.Model prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return (Builder) DEFAULT_INSTANCE.createBuilder(prototype);
     }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      *客户端发送实体
@@ -567,186 +418,16 @@ public final class SendBodyProto {
      * Protobuf type {@code vip.qsos.im.lib.model.proto.Model}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          vip.qsos.im.lib.model.proto.SendBodyProto.Model, Builder> implements
         // @@protoc_insertion_point(builder_implements:vip.qsos.im.lib.model.proto.Model)
         vip.qsos.im.lib.model.proto.SendBodyProto.ModelOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return vip.qsos.im.lib.model.proto.SendBodyProto.internal_static_vip_qsos_im_lib_model_proto_Model_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetData();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetMutableData();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return vip.qsos.im.lib.model.proto.SendBodyProto.internal_static_vip_qsos_im_lib_model_proto_Model_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                vip.qsos.im.lib.model.proto.SendBodyProto.Model.class, vip.qsos.im.lib.model.proto.SendBodyProto.Model.Builder.class);
-      }
-
       // Construct using vip.qsos.im.lib.model.proto.SendBodyProto.Model.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        key_ = "";
 
-        timestamp_ = 0L;
-
-        internalGetMutableData().clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return vip.qsos.im.lib.model.proto.SendBodyProto.internal_static_vip_qsos_im_lib_model_proto_Model_descriptor;
-      }
-
-      @java.lang.Override
-      public vip.qsos.im.lib.model.proto.SendBodyProto.Model getDefaultInstanceForType() {
-        return vip.qsos.im.lib.model.proto.SendBodyProto.Model.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public vip.qsos.im.lib.model.proto.SendBodyProto.Model build() {
-        vip.qsos.im.lib.model.proto.SendBodyProto.Model result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public vip.qsos.im.lib.model.proto.SendBodyProto.Model buildPartial() {
-        vip.qsos.im.lib.model.proto.SendBodyProto.Model result = new vip.qsos.im.lib.model.proto.SendBodyProto.Model(this);
-        int from_bitField0_ = bitField0_;
-        result.key_ = key_;
-        result.timestamp_ = timestamp_;
-        result.data_ = internalGetData();
-        result.data_.makeImmutable();
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof vip.qsos.im.lib.model.proto.SendBodyProto.Model) {
-          return mergeFrom((vip.qsos.im.lib.model.proto.SendBodyProto.Model)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(vip.qsos.im.lib.model.proto.SendBodyProto.Model other) {
-        if (other == vip.qsos.im.lib.model.proto.SendBodyProto.Model.getDefaultInstance()) return this;
-        if (!other.getKey().isEmpty()) {
-          key_ = other.key_;
-          onChanged();
-        }
-        if (other.getTimestamp() != 0L) {
-          setTimestamp(other.getTimestamp());
-        }
-        internalGetMutableData().mergeFrom(
-            other.internalGetData());
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        vip.qsos.im.lib.model.proto.SendBodyProto.Model parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (vip.qsos.im.lib.model.proto.SendBodyProto.Model) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object key_ = "";
       /**
        * <pre>
        **发送key
@@ -755,17 +436,9 @@ public final class SendBodyProto {
        * <code>string key = 1;</code>
        * @return The key.
        */
+      @java.lang.Override
       public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          key_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getKey();
       }
       /**
        * <pre>
@@ -775,18 +448,10 @@ public final class SendBodyProto {
        * <code>string key = 1;</code>
        * @return The bytes for key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getKeyBytes();
       }
       /**
        * <pre>
@@ -799,12 +464,8 @@ public final class SendBodyProto {
        */
       public Builder setKey(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        key_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setKey(value);
         return this;
       }
       /**
@@ -816,9 +477,8 @@ public final class SendBodyProto {
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-        
-        key_ = getDefaultInstance().getKey();
-        onChanged();
+        copyOnWrite();
+        instance.clearKey();
         return this;
       }
       /**
@@ -832,17 +492,11 @@ public final class SendBodyProto {
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        key_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setKeyBytes(value);
         return this;
       }
 
-      private long timestamp_ ;
       /**
        * <pre>
        **发送时间
@@ -851,8 +505,9 @@ public final class SendBodyProto {
        * <code>int64 timestamp = 2;</code>
        * @return The timestamp.
        */
+      @java.lang.Override
       public long getTimestamp() {
-        return timestamp_;
+        return instance.getTimestamp();
       }
       /**
        * <pre>
@@ -864,9 +519,8 @@ public final class SendBodyProto {
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
-        
-        timestamp_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setTimestamp(value);
         return this;
       }
       /**
@@ -878,37 +532,15 @@ public final class SendBodyProto {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        
-        timestamp_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearTimestamp();
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> data_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetData() {
-        if (data_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              DataDefaultEntryHolder.defaultEntry);
-        }
-        return data_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableData() {
-        onChanged();;
-        if (data_ == null) {
-          data_ = com.google.protobuf.MapField.newMapField(
-              DataDefaultEntryHolder.defaultEntry);
-        }
-        if (!data_.isMutable()) {
-          data_ = data_.copy();
-        }
-        return data_;
-      }
+      @java.lang.Override
 
       public int getDataCount() {
-        return internalGetData().getMap().size();
+        return instance.getDataMap().size();
       }
       /**
        * <pre>
@@ -917,68 +549,17 @@ public final class SendBodyProto {
        *
        * <code>map&lt;string, string&gt; data = 3;</code>
        */
+      @java.lang.Override
 
       public boolean containsData(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetData().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getDataMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getData() {
-        return getDataMap();
-      }
-      /**
-       * <pre>
-       **发送数据集合
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; data = 3;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-        return internalGetData().getMap();
-      }
-      /**
-       * <pre>
-       **发送数据集合
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; data = 3;</code>
-       */
-
-      public java.lang.String getDataOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetData().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       **发送数据集合
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; data = 3;</code>
-       */
-
-      public java.lang.String getDataOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetData().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
+        key.getClass();
+        return instance.getDataMap().containsKey(key);
       }
 
       public Builder clearData() {
-        internalGetMutableData().getMutableMap()
-            .clear();
+        copyOnWrite();
+        instance.getMutableDataMap().clear();
         return this;
       }
       /**
@@ -991,18 +572,66 @@ public final class SendBodyProto {
 
       public Builder removeData(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableData().getMutableMap()
-            .remove(key);
+        key.getClass();
+        copyOnWrite();
+        instance.getMutableDataMap().remove(key);
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * Use {@link #getDataMap()} instead.
        */
+      @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableData() {
-        return internalGetMutableData().getMutableMap();
+      public java.util.Map<java.lang.String, java.lang.String> getData() {
+        return getDataMap();
+      }
+      /**
+       * <pre>
+       **发送数据集合
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; data = 3;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
+        return java.util.Collections.unmodifiableMap(
+            instance.getDataMap());
+      }
+      /**
+       * <pre>
+       **发送数据集合
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; data = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getDataOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        key.getClass();
+        java.util.Map<java.lang.String, java.lang.String> map =
+            instance.getDataMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       **发送数据集合
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; data = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getDataOrThrow(
+          java.lang.String key) {
+        key.getClass();
+        java.util.Map<java.lang.String, java.lang.String> map =
+            instance.getDataMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
       }
       /**
        * <pre>
@@ -1014,10 +643,10 @@ public final class SendBodyProto {
       public Builder putData(
           java.lang.String key,
           java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableData().getMutableMap()
-            .put(key, value);
+        key.getClass();
+        value.getClass();
+        copyOnWrite();
+        instance.getMutableDataMap().put(key, value);
         return this;
       }
       /**
@@ -1027,108 +656,93 @@ public final class SendBodyProto {
        *
        * <code>map&lt;string, string&gt; data = 3;</code>
        */
-
       public Builder putAllData(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableData().getMutableMap()
-            .putAll(values);
+        copyOnWrite();
+        instance.getMutableDataMap().putAll(values);
         return this;
       }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
 
       // @@protoc_insertion_point(builder_scope:vip.qsos.im.lib.model.proto.Model)
     }
+    @java.lang.Override
+    @java.lang.SuppressWarnings({"unchecked", "fallthrough"})
+    protected final java.lang.Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        java.lang.Object arg0, java.lang.Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new vip.qsos.im.lib.model.proto.SendBodyProto.Model();
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case BUILD_MESSAGE_INFO: {
+            java.lang.Object[] objects = new java.lang.Object[] {
+              "key_",
+              "timestamp_",
+              "data_",
+              DataDefaultEntryHolder.defaultEntry,
+            };
+            java.lang.String info =
+                "\u0000\u0003\u0000\u0000\u0001\u0003\u0003\u0001\u0000\u0000\u0001\u0208\u0002\u0002" +
+                "\u00032";
+            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
+        }
+        // fall through
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          com.google.protobuf.Parser<vip.qsos.im.lib.model.proto.SendBodyProto.Model> parser = PARSER;
+          if (parser == null) {
+            synchronized (vip.qsos.im.lib.model.proto.SendBodyProto.Model.class) {
+              parser = PARSER;
+              if (parser == null) {
+                parser =
+                    new DefaultInstanceBasedParser<vip.qsos.im.lib.model.proto.SendBodyProto.Model>(
+                        DEFAULT_INSTANCE);
+                PARSER = parser;
+              }
+            }
+          }
+          return parser;
+      }
+      case GET_MEMOIZED_IS_INITIALIZED: {
+        return (byte) 1;
+      }
+      case SET_MEMOIZED_IS_INITIALIZED: {
+        return null;
+      }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:vip.qsos.im.lib.model.proto.Model)
     private static final vip.qsos.im.lib.model.proto.SendBodyProto.Model DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new vip.qsos.im.lib.model.proto.SendBodyProto.Model();
+      Model defaultInstance = new Model();
+      // New instances are implicitly immutable so no need to make
+      // immutable.
+      DEFAULT_INSTANCE = defaultInstance;
+      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
+        Model.class, defaultInstance);
     }
 
     public static vip.qsos.im.lib.model.proto.SendBodyProto.Model getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Model>
-        PARSER = new com.google.protobuf.AbstractParser<Model>() {
-      @java.lang.Override
-      public Model parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Model(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<Model> PARSER;
 
     public static com.google.protobuf.Parser<Model> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Model> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public vip.qsos.im.lib.model.proto.SendBodyProto.Model getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vip_qsos_im_lib_model_proto_Model_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vip_qsos_im_lib_model_proto_Model_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vip_qsos_im_lib_model_proto_Model_DataEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vip_qsos_im_lib_model_proto_Model_DataEntry_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\016SendBody.proto\022\033vip.qsos.im.lib.model." +
-      "proto\"\220\001\n\005Model\022\013\n\003key\030\001 \001(\t\022\021\n\ttimestam" +
-      "p\030\002 \001(\003\022:\n\004data\030\003 \003(\0132,.vip.qsos.im.lib." +
-      "model.proto.Model.DataEntry\032+\n\tDataEntry" +
-      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\017B\rSend" +
-      "BodyProtob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_vip_qsos_im_lib_model_proto_Model_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_vip_qsos_im_lib_model_proto_Model_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vip_qsos_im_lib_model_proto_Model_descriptor,
-        new java.lang.String[] { "Key", "Timestamp", "Data", });
-    internal_static_vip_qsos_im_lib_model_proto_Model_DataEntry_descriptor =
-      internal_static_vip_qsos_im_lib_model_proto_Model_descriptor.getNestedTypes().get(0);
-    internal_static_vip_qsos_im_lib_model_proto_Model_DataEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vip_qsos_im_lib_model_proto_Model_DataEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
