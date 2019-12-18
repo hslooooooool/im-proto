@@ -1,0 +1,38 @@
+syntax = "proto3";
+package vip.qsos.im.lib.model.proto;
+option optimize_for = LITE_RUNTIME;
+/**输出的JAVA实体对象名称*/
+option java_outer_classname = "SessionProto";
+/*消息会话包装类*/
+message Model {
+    /*数据库主键ID*/
+    int64 id = 1;
+    /*session绑定的用户账号*/
+    string account = 2;
+    /*session在本台服务器上的ID*/
+    string nid = 3;
+    /*客户端 ID (设备号码+应用包名),ios为 device token */
+    string deviceId = 4;
+    /*session绑定的服务器IP*/
+    string host = 5;
+    /*客户端设备类型*/
+    string channel = 6;
+    /*客户端设备型号*/
+    string deviceModel = 7;
+    /*客户端应用版本*/
+    string clientVersion = 8;
+    /*客户端系统版本*/
+    string systemVersion = 9;
+    /*客户端登录时间*/
+    int64 bindTime = 10;
+    /*客户端经度*/
+    double longitude = 11;
+    /*客户端维度*/
+    double latitude = 12;
+    /*客户端位置*/
+    string location = 13;
+    /*apns推送状态*/
+    int32 apns = 14;
+    /*客户端在线状态*/
+    int32 state = 15;
+}
