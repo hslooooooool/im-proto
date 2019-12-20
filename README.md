@@ -17,3 +17,10 @@ https://mvnrepository.com/artifact/com.google.protobuf
 ```proto
 option optimize_for = LITE_RUNTIME;
 ```
+
+## 文档
+- [Proto原文件与生成方式说明](https://github.com/hslooooooool/im-proto)
+- [IM消息服务SDK NETTY版本](https://github.com/hslooooooool/im-netty-server)
+- [Android端SDK与Demo仓库地址](https://github.com/hslooooooool/im-android-client)
+- [WEB端SDK与Demo仓库地址](https://github.com/hslooooooool/im-web-client)
+- [源于此开源项目](https://gitee.com/farsunset/cim)
